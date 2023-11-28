@@ -4,7 +4,6 @@ const express = require("express");
 const morgan = require("morgan");
 
 const app = express();
-const genres = require("./routes/genres");
 const games = require("./routes/games");
 
 app.use(function (req, res, next) {
@@ -19,7 +18,6 @@ app.use(function (req, res, next) {
 
 app.use(express.json());
 app.use(morgan("tiny"));
-app.use("/api/genres", genres);
 app.use("/api/games", games);
 require("./startup/prod")(app);
 

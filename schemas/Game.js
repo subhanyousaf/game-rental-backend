@@ -1,4 +1,3 @@
-const { array } = require("joi");
 const { model, Schema } = require("mongoose");
 
 module.exports = model(

@@ -5,6 +5,7 @@ const morgan = require("morgan");
 
 const app = express();
 const games = require("./routes/games");
+const customers = require("./routes/customers");
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -19,6 +20,7 @@ app.use(function (req, res, next) {
 app.use(express.json());
 app.use(morgan("tiny"));
 app.use("/api/games", games);
+app.use("/api/customers", customers);
 require("./startup/prod")(app);
 
 mongoose

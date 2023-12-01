@@ -21,8 +21,6 @@ router.get("/:id", async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id))
     return res.status(404).send("Invalid ID.");
 
-  const search = req.query.search;
-
   const game = await Game.findOne({ _id: req.params.id });
   if (!game)
     return res.status(404).send("The game with the given ID was not found.");
